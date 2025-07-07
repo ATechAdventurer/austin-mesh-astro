@@ -2,7 +2,7 @@
 
 ![Austin Mesh Logo](src/assets/images/Austin-Mesh-Logo.svg)
 
-The official website for Austin Mesh - a community group building a free, decentralized text messaging network in Austin, Texas using [Meshtastic](https://meshtastic.org/) technology.
+~The official website for Austin Mesh~ A prototype port of Austin Mesh's website - a community group building a free, decentralized text messaging network in Austin, Texas using [Meshtastic](https://meshtastic.org/) technology.
 
 ## 🚀 About Austin Mesh
 

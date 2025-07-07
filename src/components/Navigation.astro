@@ -1,0 +1,90 @@
+---
+import { Image } from 'astro:assets';
+import DiscordLogo from '../assets/images/social/discord.svg';
+import InstagramLogo from '../assets/images/social/instagram.svg';
+import YoutubeLogo from '../assets/images/social/youtube.svg';
+---
+
+<nav>
+  <menu>
+    <li><a href="/">Home</a></li>
+    <li>
+      <a href="/learn/">Learn</a>
+      <menu>
+        <li><a href="/learn/#about">About</a></li>
+        <li><a href="/learn/#coverage">Network coverage</a></li>
+        <li><a href="/learn/#comparisons">Similar technology</a></li>
+      </menu>
+    </li>
+    <li>
+      <a href="/join/">Join</a>
+      <menu>
+        <li><a href="/join/#network">Join the network</a></li>
+        <li><a href="/join/#best-practices">Best practices</a></li>
+        <li><a href="/join/#group">Join the group</a></li>
+      </menu>
+    </li>
+    <li>
+      <a href="/devices/">Devices & Hardware</a>
+      <menu>
+        <li>
+          <a href="/devices/#options">Options & Recommendations</a>
+          <menu>
+            <li><a href="/devices/#pocket-portable">Pocket/Portable</a></li>
+            <li>
+              <a href="/devices/#stationary-solar">Stationary/Solar</a>
+            </li>
+          </menu>
+        </li>
+        <li>
+          <a href="/devices/#solar">Building a Solar Repeater</a>
+          <menu>
+            <li><a href="/devices/#history">History</a></li>
+            <li><a href="/devices/#parts-list">Parts list</a></li>
+          </menu>
+        </li>
+      </menu>
+    </li>
+    <li>
+      <a href="/similar-networks/">Similar networks</a>
+      <menu>
+        <li><a href="/similar-networks/#other-meshes">Other meshes</a></li>
+        <li>
+          <a href="/similar-networks/#start-a-similar-network"
+            >Start a similar network</a
+          >
+        </li>
+      </menu>
+    </li>
+    <li><a href="/partners/">Partners</a></li>
+  </menu>
+  <menu class="menu--social">
+    <li>
+      <a
+        href="https://discord.gg/6a5Sv2s9bG"
+        target="_blank"
+        title="Join the AustinMesh Discord"
+      >
+        <Image src={DiscordLogo} height={21} alt="Discord Logo" />
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://youtube.com/channel/UCtFl5gdwv0SdrP8sHlDMKNA"
+        target="_blank"
+        title="Join the AustinMesh YouTube"
+      >
+        <Image src={YoutubeLogo} height={21} alt="YouTube Logo" />
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.instagram.com/p/Cq0jOpYLpZy/"
+        target="_blank"
+        title="Join the AustinMesh Instagram"
+      >
+        <Image src={InstagramLogo} height={21} alt="Instagram Logo" />
+      </a>
+    </li>
+  </menu>
+</nav>

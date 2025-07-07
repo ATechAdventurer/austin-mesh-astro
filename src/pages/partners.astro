@@ -9,6 +9,24 @@ import UTAustinRepeater from '../assets/images/ut-austin/University-of-Texas-at-
 import PartnerLogos from '../components/PartnerLogos.astro';
 import SectionCard from '../components/SectionCard.astro';
 import Layout from '../layouts/Layout.astro';
+
+const logos = [
+	{
+		src: GusGarciaLogo,
+		alt: "Logo of the Gus Garcia Young Men's Leadership Academy AISD",
+		title: "Gus Garcia Young Men's Leadership Academy AISD",
+	},
+	{
+		src: HartLogo,
+		alt: 'Logo of the HART Elementary School AISD',
+		title: 'HART Elementary AISD',
+	},
+	{
+		src: LBJLogo,
+		alt: 'Logo of the LBJ Early College High School, AISD',
+		title: 'Logo of the LBJ Early College High School, AISD',
+	},
+];
 ---
 
 <Layout>
@@ -21,15 +39,10 @@ import Layout from '../layouts/Layout.astro';
     </p>
   </SectionCard>
   <SectionCard title="Austin Independent School District (AISD)">
-    <PartnerLogos logos={[
-      { src: GusGarciaLogo, alt: 'Logo of the Gus Garcia Young Men\'s Leadership Academy AISD', title: 'Gus Garcia Young Men\'s Leadership Academy AISD' },
-      { src: HartLogo, alt: 'Logo of the HART Elementary School AISD', title: 'HART Elementary AISD' },
-      { src: LBJLogo, alt: 'Logo of the LBJ Early College High School, AISD', title: 'Logo of the LBJ Early College High School, AISD' }
-    ]} />
+    <PartnerLogos logos={logos} />
     <p>
       Austin Mesh is excited to partner with the <strong>
-        Austin Independent School District (AISD)</strong>
-      > to bring hands-on STEM learning to students in Northeast Austin. Through
+        Austin Independent School District (AISD)</strong> to bring hands-on STEM learning to students in Northeast Austin. Through
       this collaboration, we're empowering young minds to explore wireless communication,
       electronics, and programming using <a
         href="https://meshtastic.org/"

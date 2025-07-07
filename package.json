@@ -11,10 +11,12 @@
 		"lint:fix": "biome check --write ."
 	},
 	"dependencies": {
+		"@astrojs/cloudflare": "^12.6.0",
 		"astro": "^5.11.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.0.6",
-		"prettier-plugin-astro": "^0.14.1"
+		"prettier-plugin-astro": "^0.14.1",
+		"wrangler": "^4.23.0"
 	}
 }

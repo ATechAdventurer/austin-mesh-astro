@@ -6,7 +6,7 @@
 
 ## 🚀 About Austin Mesh
 
-Austin Mesh is a community-driven initiative working to build a resilient mesh network of solar-powered [Meshtastic](https://meshtastic.org/) radios throughout Austin, Texas. This network acts like a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network without relying on cell towers, internet, or power grid infrastructure.
+Austin Mesh is a community-driven initiative working to build a resilient mesh network of [Meshtastic](https://meshtastic.org/) radios throughout Austin, Texas. This network acts like a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network without relying on cell towers, internet, or power grid infrastructure.
 
 ### Key Features
 

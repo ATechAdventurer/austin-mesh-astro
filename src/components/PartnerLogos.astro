@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+export interface Logo {
+	src: ImageMetadata;
+	alt: string;
+	title?: string;
+}
+export interface Props {
+	logos: Logo[];
+	className?: string;
+}
+const { logos, className = '' } = Astro.props;
+---
+<div class={`partner-logos ${className}`}>
+  {logos.map(logo => (
+    <div>
+      <Image src={logo.src} alt={logo.alt} title={logo.title || logo.alt} loading="lazy" class="white-bg" width="240" />
+    </div>
+  ))}
+</div> 

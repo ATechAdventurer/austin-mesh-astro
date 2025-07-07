@@ -1,0 +1,17 @@
+---
+import { Image } from 'astro:assets';
+export interface Props {
+	title: string;
+	imageSrc?: ImageMetadata;
+	imageAlt?: string;
+	className?: string;
+}
+const { title, imageSrc, imageAlt, className = '' } = Astro.props;
+---
+<section class={`section-card ${className}`}>
+  {imageSrc && <Image src={imageSrc} alt={imageAlt || title} class="section-card__image" />}
+  <h2>{title}</h2>
+  <div class="section-card__content">
+    <slot />
+  </div>
+</section> 

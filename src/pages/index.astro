@@ -1,5 +1,8 @@
 ---
 import { Image } from 'astro:assets';
+import HeroSection from '../components/HeroSection.astro';
+import PartnerLogos from '../components/PartnerLogos.astro';
+import SectionCard from '../components/SectionCard.astro';
 import Layout from '../layouts/Layout.astro';
 import '../styles/matcha.css';
 import '../styles/global.css';
@@ -11,23 +14,14 @@ import heroImageSmall from '../assets/images/austin-mesh-wildflower-center-small
 ---
 
 <Layout>
-  <h1>Austin Mesh</h1>
-  <section
-    class="hero"
-    style={`background-image: url(${heroImageSmall.src}); --hero-bg-large: url(${heroImageLarge.src});`}
-    aria-label="Hand holding a Meshtastic communicator at the Ladybird Johnson Wildflower Center with a view of the Texas countryside and Austin city skyline in the background with an invitation to join the group or learn more"
-  >
-    <div class="hero-content">
-      <h2>
-        We are a community group building a free text messaging network in
-        Austin
-      </h2>
-      <a class="success" href="/join/">Join the network</a>
-      <a class="default" href="/learn/">Learn more</a>
-    </div>
-  </section>
-  <section>
-    <h2>Dive in</h2>
+  <HeroSection
+    background={heroImageSmall.src}
+    heading="Austin Mesh"
+    subheading="We are a community group building a free text messaging network in Austin"
+    ctas={[{ label: 'Join the network', href: '/join/', className: 'success' }, { label: 'Learn more about Austin Mesh and Meshtastic', href: '/learn/', className: 'default' }]}
+    className="hero"
+  />
+  <SectionCard title="Dive in">
     <p>
       We have all sorts of great content on our website. From our world famous <a
         href="/learn/#eli5">Meshtastic ELI5</a
@@ -40,46 +34,18 @@ import heroImageSmall from '../assets/images/austin-mesh-wildflower-center-small
       > if you appreciate what we've done or have any questions or ideas. We'd love
       to hear from you!
     </p>
-  </section>
-  <section>
-    <h2>Community partners</h2>
+  </SectionCard>
+  <SectionCard title="Community partners">
     <p>
       We're extremely grateful to our great community partners who have helped
       to build this strong network. <a href="/partners/"
         >Explore photos, learn more, or become a partner</a
       >
     </p>
-    <div class="partner-logos">
-      <div>
-        <Image
-          src={GusGarciaLogo}
-          width={240}
-          alt="Logo of the Gus Garcia Young Men's Leadership Academy AISD"
-          title="Gus Garcia Young Men's Leadership Academy AISD"
-          loading="lazy"
-          class="white-bg"
-        />
-      </div>
-      <div>
-        <Image
-          src={HartLogo}
-          width={240}
-          alt="Logo of the HART Elementary School AISD"
-          title="HART Elementary AISD"
-          loading="lazy"
-          class="white-bg"
-        />
-      </div>
-      <div>
-        <Image
-          src={LBJLogo}
-          width={240}
-          alt="Logo of the LBJ Early College High School, AISD"
-          title="Logo of the LBJ Early College High School, AISD"
-          loading="lazy"
-          class="white-bg"
-        />
-      </div>
-    </div>
-  </section>
+    <PartnerLogos logos={[
+      { src: GusGarciaLogo, alt: 'Logo of the Gus Garcia Young Men\'s Leadership Academy AISD', title: 'Gus Garcia Young Men\'s Leadership Academy AISD' },
+      { src: HartLogo, alt: 'Logo of the HART Elementary School AISD', title: 'HART Elementary AISD' },
+      { src: LBJLogo, alt: 'Logo of the LBJ Early College High School, AISD', title: 'Logo of the LBJ Early College High School, AISD' }
+    ]} />
+  </SectionCard>
 </Layout>

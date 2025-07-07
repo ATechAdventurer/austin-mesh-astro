@@ -4,7 +4,7 @@ import AustinMeshLogo from '../assets/images/Austin-Mesh-Logo.svg';
 ---
 
 <header>
-  <a href="/">
+  <a href="/" aria-label="Home">
     <Image
       src={AustinMeshLogo}
       class="logo"
@@ -13,6 +13,7 @@ import AustinMeshLogo from '../assets/images/Austin-Mesh-Logo.svg';
       width="500"
       height="121"
     />
+    <span class="sr-only">Home</span>
   </a>
   <button
     onclick="document.getElementById('event').showModal()"

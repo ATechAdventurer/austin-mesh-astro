@@ -1,0 +1,24 @@
+---
+export interface Props {
+	headers: string[];
+	rows: Array<string[]>;
+	className?: string;
+}
+const { headers, rows, className = '' } = Astro.props;
+---
+<div class={`table-wrapper ${className}`}>
+  <table>
+    <thead>
+      <tr>
+        {headers.map(header => <th>{header}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map(row => (
+        <tr>
+          {row.map(cell => <td>{cell}</td>)}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div> 

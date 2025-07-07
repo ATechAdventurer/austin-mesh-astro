@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+export interface SocialLink {
+	url: string;
+	icon: ImageMetadata;
+	alt: string;
+	title?: string;
+}
+export interface Props {
+	links: SocialLink[];
+	className?: string;
+}
+const { links, className = '' } = Astro.props;
+---
+<div class={`social-links ${className}`}>
+  {links.map(link => (
+    <a href={link.url} target="_blank" rel="noopener" title={link.title || link.alt} aria-label={link.title || link.alt}>
+      <Image src={link.icon} alt={link.alt} width="40" height="40" />
+      <span class="sr-only">{link.title || link.alt}</span>
+    </a>
+  ))}
+</div> 

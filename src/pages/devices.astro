@@ -1,60 +1,66 @@
 ---
+import PartsTable from '../components/PartsTable.astro';
+import SectionCard from '../components/SectionCard.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <hgroup>
-    <h1>Devices for the Mesh</h1>
-    <p>
-      Austin mesh uses a technology called <a
-        href="https://meshtastic.org"
-        target="_blank">Meshtastic</a
-      > to power the network here in Central Texas. In order to connect to this network,
-      a relatively low cost device is required. You'll often hear these devices referred
-      to as <b>nodes</b>. You can <a href="https://www.rfindex.com"
-        >compare the best meshtastic nodes on RF Index</a
-      >.
-    </p>
-  </hgroup>
-  <ul>
-    <li><a href="#options">Device options and recommendations</a></li>
-    <li>
-      <a href="#solar">Building a Solar-Powered Repeater for Meshtastic</a>
-      <ul>
-        <li>
-          <a href="#history">A brief history</a>
-          <ul>
-            <li>Versions</li>
-            <li>Lessons learned</li>
-            <li>Considerations for other climates</li>
-          </ul>
-        </li>
-        <li>
-          <a href="#parts-list">Parts list</a>
-          <ul>
-            <li>Regular parts</li>
-            <li>Birdhouse parts</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-
-  <section id="options">
-    <h2>Options and Recommendations</h2>
-    <p>
-      I recently created a new tool, <a href="https://www.rfindex.com"
-        >RF Index</a
-      >, which compares the various node options. This includes DIY, "Off the
-      shelf", solar, etc. Let me know if you <a
-        href="https://forms.gle/CNUbVP5eUTqZNsdX6"
-        target="_blank"
-        rel="nofollow">have any feedback</a
-      >!
-    </p>
-
-    <section>
-      <h2 id="solar">Building a Solar-Powered Repeater for Meshtastic</h2>
+  <SectionCard title="Devices for the Mesh">
+    <hgroup>
+      <h1>Devices for the Mesh</h1>
+      <p>
+        Austin mesh uses a technology called <a
+          href="https://meshtastic.org"
+          target="_blank">Meshtastic</a
+        > to power the network here in Central Texas. In order to connect to this network,
+        a relatively low cost device is required. You'll often hear these devices referred
+        to as <b>nodes</b>. You can <a href="https://www.rfindex.com"
+          >compare the best meshtastic nodes on RF Index</a
+        >.
+      </p>
+    </hgroup>
+    <ul>
+      <li><a href="#options">Device options and recommendations</a></li>
+      <li>
+        <a href="#solar">Building a Solar-Powered Repeater for Meshtastic</a>
+        <ul>
+          <li>
+            <a href="#history">A brief history</a>
+            <ul>
+              <li>Versions</li>
+              <li>Lessons learned</li>
+              <li>Considerations for other climates</li>
+            </ul>
+          </li>
+          <li>
+            <a href="#parts-list">Parts list</a>
+            <ul>
+              <li>Regular parts</li>
+              <li>Birdhouse parts</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </SectionCard>
+  <SectionCard title="Options and Recommendations">
+    <section id="options">
+      <h2>Options and Recommendations</h2>
+      <p>
+        I recently created a new tool, <a href="https://www.rfindex.com"
+          >RF Index</a
+        >, which compares the various node options. This includes DIY, "Off the
+        shelf", solar, etc. Let me know if you <a
+          href="https://forms.gle/CNUbVP5eUTqZNsdX6"
+          target="_blank"
+          rel="nofollow">have any feedback</a
+        >!
+      </p>
+    </section>
+  </SectionCard>
+  <SectionCard title="Building a Solar-Powered Repeater for Meshtastic">
+    <section id="solar">
+      <h2>Building a Solar-Powered Repeater for Meshtastic</h2>
       <h3 id="history">A brief history</h3>
       <h4>History of versions</h4>
       <p>We have tried 5 permutations of solar powering nodes:</p>
@@ -102,7 +108,7 @@ import Layout from '../layouts/Layout.astro';
       <details open>
         <summary>Version 5.0 (Currently running)</summary>
         <p>
-          For this version we stopped using the RAK’s solar and battery
+          For this version we stopped using the RAK's solar and battery
           connectors entirely. Instead we connected a large 12 watt solar panel
           to a Voltaic Systems battery via USB and then connected the battery to
           the RAK board via USB. The Voltaic Systems battery acts as the solar
@@ -117,13 +123,13 @@ import Layout from '../layouts/Layout.astro';
       <h4>Lessons learned:</h4>
       <ol>
         <li>
-          Don’t trust the RAK board to handle varying solar voltage or varying
+          Don't trust the RAK board to handle varying solar voltage or varying
           battery voltage. It is very unhappy if either voltage goes outside of
           a narrow range. In fact there is a <a
             href="https://meshtastic.discourse.group/t/rak-4631-solar-repeater/7694/7"
             >known issue</a
           > where the Nordic nRF52840 module inside of the RAK 4631 chip causes it
-          to enter a “Super Deep Sleep” fault state when it is supplied with 3.3V.
+          to enter a "Super Deep Sleep" fault state when it is supplied with 3.3V.
           This means when the battery voltage falls too low the RAK chip shuts down
           and can only be rebooted manually.
         </li>
@@ -138,7 +144,7 @@ import Layout from '../layouts/Layout.astro';
           battery.
         </li>
         <li>
-          Don’t add any modules. The GPS module increases battery usage
+          Don't add any modules. The GPS module increases battery usage
           significantly and is unnecessary if the repeater is in a fixed
           position.
         </li>
@@ -210,208 +216,36 @@ import Layout from '../layouts/Layout.astro';
             electronics with conformal coating.
           </li>
         </li>
-
-        <h3 id="parts-list">Parts list</h3>
-        <p>
-          With all that said, here is the parts list for our most-preferred way
-          to build a solar powered repeater. This design doesn’t require any
-          soldering or complicated connectors. It also doesn’t require any
-          battery management chips (which often have long shipping lead times
-          and can be hard to get). For this design the solar panel is connected
-          directly to the battery pack via USB. Then the battery pack is
-          connected to the board via USB. The Voltaic Systems V25 battery is
-          nice because it is optimized to charge from a solar panel and it is
-          set standard to an “always on” mode which means the battery bank does
-          not shut off after a set amount of time like other battery packs –
-          this is useful as the RAK chip uses very little power and can trick
-          other battery packs into shutting off. The other really nice thing
-          about the Voltaic pack is than when it drains down completely it shuts
-          down, but then once the solar panel has sufficiently charged it back
-          up it will automatically turn itself back on again. The RAK radio uses
-          between 100 and 1000 mAh per day, with about 400 mAh per day being
-          average so theoretically the 6,400mAh Voltaic V25 could keep the radio
-          running for 16 days without solar.
-        </p>
-        <h4>Regular parts</h4>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Product Name</th>
-                <th>Cost</th>
-                <th>Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Solar Panel</td>
-                <td>Soshine 12W</td>
-                <td>$30</td>
-                <td
-                  ><a
-                    href="https://www.amazon.com/Soshine-USB-Solar-Panel-Monocrystalline/dp/B0CKXQ1XQ9"
-                    >Amazon</a
-                  > or <a href="https://s.click.aliexpress.com/e/_oDe5K29"
-                    >AliExpress</a
-                  ></td
-                >
-              </tr>
-              <tr>
-                <td>Battery</td>
-                <td>Voltaic Systems V25</td>
-                <td>$44</td>
-                <td
-                  ><a href="https://amzn.to/4lpljJp">Amazon</a> or <a
-                    href="https://voltaicsystems.com/v25">Volatic Systems</a
-                  ></td
-                >
-              </tr>
-              <tr>
-                <td>Rak Board</td>
-                <td>RAK Meshtastic Kit</td>
-                <td>$37</td>
-                <td
-                  ><a
-                    href="https://store.rokland.com/products/rak-wireless-wisblock-meshtastic-starter-kit?ref=rfindex"
-                    >Rokland</a
-                  > or <a href="https://amzn.to/4i0fpLy">Amazon</a></td
-                >
-              </tr>
-              <tr>
-                <td>Antenna Connector</td>
-                <td>IPEX to N Type Female</td>
-                <td>$4</td>
-                <td
-                  ><a
-                    href="https://store.rokland.com/products/uflipex-ipx-mini-pci-to-n-female-bulkhead-pigtail-cable-extension-rg178?ref=rfindex"
-                    >Rokland</a
-                  > or <a href="https://amzn.to/3RzOwDz">Amazon</a></td
-                >
-              </tr>
-              <tr>
-                <td>Antenna</td>
-                <td>915 MHz 3 dBi N-Female</td>
-                <td>$39</td>
-                <td
-                  ><a
-                    href="https://store.rokland.com/collections/802-11ah-wi-fi-halow/products/3-dbi-rak-brand-fiberglass-outdoor-antenna-bracket-mount-for-rak-bobcat-sensecap?ref=rfindex"
-                    >Rokland</a
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>Box</td>
-                <td>ABS Box with mounting tabs, 158mm x 90mm x 46mm</td>
-                <td>$9</td>
-                <td
-                  ><a href="https://amzn.to/3R3yy4n">Amazon</a> or <a
-                    href="https://s.click.aliexpress.com/e/_oDZk345"
-                    >AliExpress</a
-                  ></td
-                >
-              </tr>
-              <tr>
-                <td>Drain Plug</td>
-                <td>VENT-PS1YBK-N8001</td>
-                <td>$5</td>
-                <td
-                  ><a href="https://amzn.to/3FQVZf5">Amazon</a> or <a
-                    href="https://www.mouser.com/ProductDetail/Amphenol-LTW/VENT-PS1YBK-N8001?qs=5aG0NVq1C4wAxWre7fChJA%3D%3D"
-                    >Mouser</a
-                  ></td
-                >
-              </tr>
-              <tr>
-                <td>USB Cable Pass-Through</td>
-                <td>3/4 NPT Cable Gland</td>
-                <td>$2</td>
-                <td><a href="https://amzn.to/4jiQQuA">Amazon</a></td>
-              </tr>
-              <tr>
-                <td>Antenna Wrap</td>
-                <td>Proxicast</td>
-                <td>$2</td>
-                <td
-                  ><a
-                    href="https://store.rokland.com/products/tape-helium-antenna-and-coaxial-cable-self-fusing-silicone-heat-water-resistant?ref=rfindex"
-                    >Rokland</a
-                  > or <a href="https://amzn.to/43GlObt">Amazon</a></td
-                >
-              </tr>
-              <tr>
-                <td>Coax Cable</td>
-                <td>3' KMR400 N Female to N Male</td>
-                <td>$13</td>
-                <td
-                  ><a
-                    href="https://store.rokland.com/products/20-inch-antenna-extension-coaxial-cable-n-male-to-n-female-400-low-loss?ref=rfindex"
-                    >Rokland</a
-                  > or <a href="https://amzn.to/4leKIoO">Amazon</a></td
-                >
-              </tr>
-              <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td><strong>$185</strong></td>
-                <td>&nbsp;</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <h4>Birdhouse parts</h4>
-        <p>
-          To turn this repeater into a solar-powered meshtastic birdhouse you
-          can just add the following components. Simply paint the top of the
-          birdhouse black and glue on the solar panel, cut a hole in the back of
-          the birdhouse big enough to put the box into it, attach the antenna
-          mount L-Bracket to the side of the birdhouse, and connect the box to
-          the antenna on the mount with the pigtail using the jam nut.
-        </p>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Product Name</th>
-                <th>Cost</th>
-                <th>Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Birdhouse</td>
-                <td>Birdhouse</td>
-                <td>$25</td>
-                <td><a href="https://amzn.to/3E3hQPR">Amazon</a></td>
-              </tr>
-              <tr>
-                <td>Pigtail Cable</td>
-                <td>Pigtail Cable</td>
-                <td>$10</td>
-                <td><a href="https://amzn.to/3QZElIi">Amazon</a></td>
-              </tr>
-              <tr>
-                <td>Jam Nut</td>
-                <td>Jam Nut</td>
-                <td>$12</td>
-                <td><a href="https://amzn.to/3EbNM4v">Amazon</a></td>
-              </tr>
-              <tr>
-                <td>Antenna Bracket</td>
-                <td>Larsen Mobile Antenna Mounts TMB58B</td>
-                <td>$15</td>
-                <td
-                  ><a href="https://amzn.to/4je6ZBj">Amazon</a> or <a
-                    href="https://www.dxengineering.com/parts/lsn-tmb58b"
-                    >DX Engineering</a
-                  ></td
-                >
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </ol>
     </section>
-  </section>
+  </SectionCard>
+  <SectionCard title="Parts list">
+    <h4>Regular parts</h4>
+    <PartsTable
+      headers={["Item", "Product Name", "Cost", "Link"]}
+      rows={[
+        ["Solar Panel", "Soshine 12W", "$30", `<a href='https://www.amazon.com/Soshine-USB-Solar-Panel-Monocrystalline/dp/B0CKXQ1XQ9'>Amazon</a> or <a href='https://s.click.aliexpress.com/e/_oDe5K29'>AliExpress</a>`],
+        ["Battery", "Voltaic Systems V25", "$44", `<a href='https://amzn.to/4lpljJp'>Amazon</a> or <a href='https://voltaicsystems.com/v25'>Volatic Systems</a>`],
+        ["Rak Board", "RAK Meshtastic Kit", "$37", `<a href='https://store.rokland.com/products/rak-wireless-wisblock-meshtastic-starter-kit?ref=rfindex'>Rokland</a> or <a href='https://amzn.to/4i0fpLy'>Amazon</a>`],
+        ["Antenna Connector", "IPEX to N Type Female", "$4", `<a href='https://store.rokland.com/products/uflipex-ipx-mini-pci-to-n-female-bulkhead-pigtail-cable-extension-rg178?ref=rfindex'>Rokland</a> or <a href='https://amzn.to/3RzOwDz'>Amazon</a>`],
+        ["Antenna", "915 MHz 3 dBi N-Female", "$39", `<a href='https://store.rokland.com/collections/802-11ah-wi-fi-halow/products/3-dbi-rak-brand-fiberglass-outdoor-antenna-bracket-mount-for-rak-bobcat-sensecap?ref=rfindex'>Rokland</a>`],
+        ["Box", "ABS Box with mounting tabs, 158mm x 90mm x 46mm", "$9", `<a href='https://amzn.to/3R3yy4n'>Amazon</a> or <a href='https://s.click.aliexpress.com/e/_oDZk345'>AliExpress</a>`],
+        ["Drain Plug", "VENT-PS1YBK-N8001", "$5", `<a href='https://amzn.to/3FQVZf5'>Amazon</a> or <a href='https://www.mouser.com/ProductDetail/Amphenol-LTW/VENT-PS1YBK-N8001?qs=5aG0NVq1C4wAxWre7fChJA%3D%3D'>Mouser</a>`],
+        ["USB Cable Pass-Through", "3/4 NPT Cable Gland", "$2", `<a href='https://amzn.to/4jiQQuA'>Amazon</a>`],
+        ["Antenna Wrap", "Proxicast", "$2", `<a href='https://store.rokland.com/products/tape-helium-antenna-and-coaxial-cable-self-fusing-silicone-heat-water-resistant?ref=rfindex'>Rokland</a> or <a href='https://amzn.to/43GlObt'>Amazon</a>`],
+        ["Coax Cable", "3' KMR400 N Female to N Male", "$13", `<a href='https://store.rokland.com/products/20-inch-antenna-extension-coaxial-cable-n-male-to-n-female-400-low-loss?ref=rfindex'>Rokland</a> or <a href='https://amzn.to/4leKIoO'>Amazon</a>`],
+        ["", "", "<strong>$185</strong>", ""]
+      ]}
+    />
+    <h4>Birdhouse parts</h4>
+    <PartsTable
+      headers={["Item", "Product Name", "Cost", "Link"]}
+      rows={[
+        ["Birdhouse", "Birdhouse", "$25", `<a href='https://amzn.to/3E3hQPR'>Amazon</a>`],
+        ["Pigtail Cable", "Pigtail Cable", "$10", `<a href='https://amzn.to/3QZElIi'>Amazon</a>`],
+        ["Jam Nut", "Jam Nut", "$12", `<a href='https://amzn.to/3EbNM4v'>Amazon</a>`],
+        ["Antenna Bracket", "Larsen Mobile Antenna Mounts TMB58B", "$15", `<a href='https://amzn.to/4je6ZBj'>Amazon</a> or <a href='https://www.dxengineering.com/parts/lsn-tmb58b'>DX Engineering</a>`]
+      ]}
+    />
+  </SectionCard>
 </Layout>

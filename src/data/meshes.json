@@ -1,0 +1,77 @@
+[
+	{
+		"name": "Birmingham Mesh",
+		"location": "Birmingham, Alabama",
+		"url": "http://birminghammesh.org/"
+	},
+	{
+		"name": "YYC Mesh",
+		"location": "Calgary, Alberta",
+		"url": "https://yycmesh.com"
+	},
+	{
+		"name": "Charlotte Mesh",
+		"location": "Charlotte, North Carolina",
+		"url": "https://charlottemesh.org/"
+	},
+	{
+		"name": "NC Mesh",
+		"location": "North Carolina",
+		"url": "https://ncmesh.net/"
+	},
+	{
+		"name": "Chicagoland Mesh",
+		"location": "Chicago, Illinois",
+		"url": "https://chicagolandmesh.org/"
+	},
+	{
+		"name": "Denver Mesh",
+		"location": "Denver, Colorado",
+		"url": "https://denvermesh.org/"
+	},
+	{
+		"name": "Hawaii Mesh",
+		"location": "Hawaii",
+		"url": "https://www.hawaiimesh.net/"
+	},
+	{
+		"name": "Meshville",
+		"location": "Nashville, Tennessee",
+		"url": "https://www.instagram.com/meshville.tn"
+	},
+	{
+		"name": "North Texas Mesh",
+		"location": "Northern Texas",
+		"url": "https://ntxmesh.net"
+	},
+	{
+		"name": "Northwest Arkansas Mesh",
+		"location": "Northwest Arkansas",
+		"url": "https://nwamesh.com/"
+	},
+	{
+		"name": "Okmesh",
+		"location": "Oklahoma",
+		"url": "https://okmesh.org/"
+	},
+	{
+		"name": "Iffy Books (Philadelphia effort)",
+		"location": "Philadelphia, Pennsylvania",
+		"url": "https://iffybooks.net/"
+	},
+	{
+		"name": "bayme.sh",
+		"location": "San Francisco (Bay Area)",
+		"url": "https://bayme.sh"
+	},
+	{
+		"name": "SoCal Mesh",
+		"location": "Southern California",
+		"url": "https://socalmesh.org/"
+	},
+	{
+		"name": "Meshconsin",
+		"location": "Wisconsin",
+		"url": "https://meshconsin.org/"
+	}
+]

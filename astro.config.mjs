@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 
 import cloudflare from "@astrojs/cloudflare";
 
@@ -15,4 +15,17 @@ export default defineConfig({
   },
 
   integrations: [sitemap()],
+
+  env: {
+    schema: {
+      DISCORD_GUILD_ID: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      DISCORD_BOT_TOKEN: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+    },
+  },
 });

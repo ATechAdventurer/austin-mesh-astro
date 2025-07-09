@@ -5,6 +5,8 @@ import cloudflare from "@astrojs/cloudflare";
 
 import sitemap from "@astrojs/sitemap";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://austin-mesh-astro.pages.dev",
@@ -14,5 +16,5 @@ export default defineConfig({
     "/solar": "/devices#solar",
   },
 
-  integrations: [sitemap()],
+  integrations: [sitemap(), mdx()],
 });
